@@ -4,7 +4,6 @@ function flip(index, pancakesHappy, flipperSize) {
     }
 }
 
-
 function checkRemaining(pancakesHappy, flipperSize) {
     for (let i = 0; i < flipperSize; i++) {
         if (!pancakesHappy[pancakesHappy.length - 1 - i]) {

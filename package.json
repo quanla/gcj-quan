@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "y2017-r0-p1": "node /Users/quanle/Documents/Workon/personal/gcj/command.js -d src/2017/p0"
+    "y2017-r0-p0": "node /Users/quanle/Documents/Workon/personal/gcj/command.js -d src/2017/r0/p0",
+    "y2017-r0-p1": "node /Users/quanle/Documents/Workon/personal/gcj/command.js -d src/2017/r0/p1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gcj": "1.0.0"
+    "gcj": "1.0.0",
+    "common-utils": "1.0.0"
   },
   "devDependencies": {
     "chokidar": "^1.7.0",
