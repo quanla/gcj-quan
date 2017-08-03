@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "y2017-r0-p1": "node /Users/quanle/Documents/Workon/personal/gcj/command.js -d src/2017/p0"
   },
   "author": "",
   "license": "ISC",
