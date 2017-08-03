@@ -1,0 +1,17 @@
+{
+  "name": "gcj-quan",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gcj": "1.0.0"
+  },
+  "devDependencies": {
+    "chokidar": "^1.7.0",
+    "gulp": "^3.9.1"
+  }
+}

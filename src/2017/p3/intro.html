@@ -1,0 +1,190 @@
+<h3>Problem</h3>
+<p>
+  You are about to host a fashion show to show off three new styles of clothing.
+  The show will be held on a stage which is in the most fashionable of all
+  shapes: an <b>N</b>-by-<b>N</b> grid of cells.
+</p><p>
+  Each cell in the grid can be empty (which we represent with a <code>.</code>
+  character) or can contain one fashion model. The models come in three types,
+  depending on the clothing style they are wearing: <code>+</code>,
+  <code>x</code>, and the super-trendy <code>o</code>. A cell with a
+  <code>+</code> or <code>x</code> model in it adds 1 <i>style point</i> to the
+  show. A cell with an <code>o</code> model in it adds 2 style points. Empty
+  cells add no style points.
+</p><p>
+  To achieve the maximum artistic effect, there are rules on how models can be
+  placed relative to each other.
+</p>
+<ul>
+  <li>Whenever any two models share a row or column, at least one of the two
+    must be a <code>+</code>.</li>
+  <li>Whenever any two models share a diagonal of the grid, at least one of
+    the two must be an <code>x</code>.</li>
+</ul>
+<p>
+  Formally, a model located in row i<sub>0</sub> and column j<sub>0</sub> and a
+  model located in row i<sub>1</sub> and column j<sub>1</sub> share a row if
+  and only if i<sub>0</sub> = i<sub>1</sub>, they share a column if and only if
+  j<sub>0</sub> = j<sub>1</sub>, and they share a diagonal if and only if
+  i<sub>0</sub> + j<sub>0</sub> = i<sub>1</sub> + j<sub>1</sub> or
+  i<sub>0</sub> - j<sub>0</sub> = i<sub>1</sub> - j<sub>1</sub>.
+</p><p>
+  For example, the following grid is not legal:
+</p>
+<code>
+  ...<br>
+  x+o<br>
+  .+.<br>
+</code>
+<p>
+  The middle row has a pair of models (<code>x</code> and <code>o</code>) that
+  does not include a <code>+</code>. The diagonal starting at the
+  <code>+</code> in the bottom row and running up to the <code>o</code> in
+  the middle row has two models, and neither of them is an <code>x</code>.
+</p><p>
+  However, the following grid is legal. No row, column, or diagonal violates
+  the rules.
+</p>
+<code>
+  +.x<br>
+  +x+<br>
+  o..<br>
+</code>
+<p>
+  Your artistic advisor has already placed <b>M</b> models in certain
+  cells, following these rules. You are free to place any number (including
+  zero) of additional models of whichever types you like. You may not remove
+  existing models, but you may upgrade as many existing <code>+</code> and
+  <code>x</code> models into <code>o</code> models as you wish, as long as the
+  above rules are not violated.
+</p><p>
+  Your task is to find a legal way of placing and/or upgrading models that
+  earns the maximum possible number of style points.
+</p>
+
+<h3>Input</h3>
+<p>
+  The first line of the input gives the number of test cases, <b>T</b>.
+  <b>T</b> test cases follow. Each test case begins with one line with two
+  integers <b>N</b> and <b>M</b>, as described above. Then, <b>M</b> more lines
+  follow; the i-th of these lines has a <code>+</code>, <code>x</code>, or
+  <code>o</code> character (the type of the model) and two integers
+  <b>R<sub>i</sub></b> and <b>C<sub>i</sub></b> (the position of the model).
+  The rows of the grid are numbered 1 through <b>N</b>, from top to bottom.
+  The columns of the grid are numbered 1 through <b>N</b>, from left to
+  right.
+</p>
+
+<h3>Output</h3>
+<p>
+  For each test case, first output one line containing
+  <code>Case #x: y z</code>, where <code>x</code> is the test case number
+  (starting from 1), <code>y</code> is the number of style points earned in
+  your arrangement, and <code>z</code> is the total number of models you have
+  added and/or substituted in. Then, for each model that you have added or
+  substituted in, output exactly one line in exactly the same format described
+  in the Input section, where the character is the type of the model that you
+  have added or substituted in. These <code>z</code> lines can be in any order.
+</p><p>
+  If there are multiple valid answers, you may output any one of them.
+</p>
+
+<h3>Limits</h3>
+<p>
+  1 &le; <b>T</b> &le; 100.<br/>
+  1 &le; <b>N</b> &le; 100.<br/>
+  1 &le; <b>C<sub>i</sub></b> &le; <b>N</b>, for all i.<br/>
+  0 &le; <b>M</b> &le; <b>N</b><sup>2</sup>.<br/>
+  No two pre-placed models appear in the same cell.<br/>
+  It is guaranteed that the set of pre-placed models follows the rules.<br/>
+</p>
+
+<h4>Small dataset</h4>
+<p>
+  <b>R<sub>i</sub></b> = 1, for all i. (Any models that are pre-placed are in
+  the top row. Note that you may add/replace models in that row and/or add
+  models in other rows.)<br/>
+</p>
+
+<h4>Large dataset</h4>
+<p>
+  1 &le; <b>R<sub>i</sub></b> &le; <b>N</b>, for all i.<br/>
+</p>
+
+
+<h3>Sample</h3>
+<div class="problem-io-wrapper">
+<table>
+<tr>
+<td>
+<br/>
+<span class="io-table-header">Input</span>
+<br/>&nbsp;
+</td>
+<td>
+<br/>
+<span class="io-table-header">Output</span>
+<br/>&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+<pre class="io-content">3
+2 0
+1 1
+o 1 1
+3 4
++ 2 3
++ 2 1
+x 3 1
++ 2 2
+
+</pre>
+</td>
+<td>
+<pre class="io-content">Case #1: 4 3
+o 2 2
++ 2 1
+x 1 1
+Case #2: 2 0
+Case #3: 6 2
+o 2 3
+x 1 2
+
+</pre>
+</td></tr></table>
+</div>
+
+<p>
+  The sample output displays one set of answers to the sample cases. Other
+  answers may be possible. Note that the last sample case would not appear in
+  the Small dataset.
+</p><p>
+  In sample case #1, the grid is 2-by-2 and is initially blank. The output
+  corresponds to the following grid. (In these explanations, we will use
+  <code>.</code> to denote a blank cell.)
+</p>
+<code>
+  x.<br>
+  +o<br>
+</code>
+<p>
+  In sample case #2, the only cell is already occupied by an <code>o</code>
+  model, and it is impossible to add a new model or replace the
+  <code>o</code> model.
+</p><p>
+  In sample case #3, the grid looks like this before you place any models:
+</p>
+<code>
+  ...<br>
+  +++<br>
+  x..<br>
+</code>
+<p>
+  The output corresponds to this grid:
+</p>
+<code>
+  .x.<br>
+  ++o<br>
+  x..<br>
+</code>

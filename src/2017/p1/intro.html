@@ -1,0 +1,83 @@
+<h3>Problem</h3>
+<p>
+  Tatiana likes to keep things tidy. Her toys are sorted from smallest to
+  largest, her pencils are sorted from shortest to longest and her computers
+  from oldest to newest. One day, when practicing her counting skills, she
+  noticed that some integers, when written in base 10 with no leading zeroes,
+  have their digits sorted in non-decreasing order. Some examples of this are 8,
+  123, 555, and 224488. She decided to call these numbers <i>tidy</i>. Numbers
+  that do not have this property, like 20, 321, 495 and 999990, are not tidy.
+</p><p>
+  She just finished counting <i>all</i> positive integers in ascending order from 1 to
+  <b>N</b>. What was the last tidy number she counted?
+</p>
+
+<h3>Input</h3>
+<p>
+  The first line of the input gives the number of test cases, <b>T</b>. <b>T</b>
+  lines follow. Each line describes a test case with a single integer <b>N</b>,
+  the last number counted by Tatiana.
+</p>
+
+<h3>Output</h3>
+<p>
+  For each test case, output one line containing <code>Case #x: y</code>,
+  where <code>x</code> is the test case number (starting from 1)
+  and <code>y</code> is the last tidy number counted by Tatiana.
+</p>
+
+<h3>Limits</h3>
+<p>
+  1 &le; <b>T</b> &le; 100.<br/>
+</p>
+
+<h4>Small dataset</h4>
+<p>
+  1 &le; <b>N</b> &le; 1000.<br/>
+</p>
+
+<h4>Large dataset</h4>
+<p>
+  1 &le; <b>N</b> &le; 10<sup>18</sup>.<br/>
+</p>
+
+
+<h3>Sample</h3>
+<div class="problem-io-wrapper">
+<table>
+<tr>
+<td>
+<br/>
+<span class="io-table-header">Input</span>
+<br/>&nbsp;
+</td>
+<td>
+<br/>
+<span class="io-table-header">Output</span>
+<br/>&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+<pre class="io-content">4
+132
+1000
+7
+111111111111111110
+
+</pre>
+</td>
+<td>
+<pre class="io-content">Case #1: 129
+Case #2: 999
+Case #3: 7
+Case #4: 99999999999999999
+
+</pre>
+</td></tr></table>
+</div>
+
+
+<p>
+  Note that the last sample case would not appear in the Small dataset.
+</p>

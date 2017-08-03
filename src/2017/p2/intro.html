@@ -1,0 +1,130 @@
+<h3>Problem</h3>
+<p>
+  A certain bathroom has <b>N</b> + 2 stalls in a single row; the stalls on the
+  left and right ends are permanently occupied by the bathroom guards. The
+  other <b>N</b> stalls are for users.
+</p><p>
+  Whenever someone enters the bathroom, they try to choose a stall that is as far
+  from other people as possible. To avoid confusion, they follow deterministic
+  rules: For each empty stall S, they compute two
+  values L<sub>S</sub> and R<sub>S</sub>, each of which is the number of empty
+  stalls between S and the closest occupied stall to the left or right,
+  respectively. Then they consider the set of stalls with the farthest closest
+  neighbor, that is, those S for which min(L<sub>S</sub>, R<sub>S</sub>) is
+  maximal. If there is only one such stall, they choose it; otherwise, they choose
+  the one among those where max(L<sub>S</sub>, R<sub>S</sub>) is maximal. If there
+  are still multiple tied stalls, they choose the leftmost stall among those.
+</p><p>
+  <b>K</b> people are about to enter the bathroom; each one will choose their
+  stall before the next arrives. Nobody will ever leave.
+</p><p>
+  When the last person chooses their stall S, what will the values of
+  max(L<sub>S</sub>, R<sub>S</sub>) and min(L<sub>S</sub>, R<sub>S</sub>)
+  be?
+</p>
+
+<h3>Solving this problem</h3>
+<p>
+  This problem has 2 Small datasets and 1 Large dataset. You must solve the
+  first Small dataset before you can attempt the second Small dataset. You will
+  be able to retry either of the Small datasets (with a time penalty). You will
+  be able to make a single attempt at the Large, as usual, only after solving
+  both Small datasets.
+</p>
+
+<h3>Input</h3>
+<p>
+  The first line of the input gives the number of test cases, <b>T</b>.
+  <b>T</b> lines follow. Each line describes a test case with two integers
+  <b>N</b> and <b>K</b>, as described above.
+</p>
+
+<h3>Output</h3>
+<p>
+  For each test case, output one line containing <code>Case #x: y z</code>,
+  where <code>x</code> is the test case number (starting from 1),
+  <code>y</code> is max(L<sub>S</sub>, R<sub>S</sub>), and <code>z</code>
+  is min(L<sub>S</sub>, R<sub>S</sub>) as calculated by the last person to
+  enter the bathroom for their chosen stall S.
+</p>
+
+<h3>Limits</h3>
+<p>
+1 &le; <b>T</b> &le; 100.<br/>
+1 &le; <b>K</b> &le; <b>N</b>.<br/>
+</p>
+
+<h4>Small dataset 1</h4>
+<p>
+1 &le; <b>N</b> &le; 1000.<br/>
+</p>
+
+<h4>Small dataset 2</h4>
+<p>
+1 &le; <b>N</b> &le; 10<sup>6</sup>.<br/>
+</p>
+
+<h4>Large dataset</h4>
+<p>
+1 &le; <b>N</b> &le; 10<sup>18</sup>.<br/>
+</p>
+
+
+<h3>Sample</h3>
+<div class="problem-io-wrapper">
+<table>
+<tr>
+<td>
+<br/>
+<span class="io-table-header">Input</span>
+<br/>&nbsp;
+</td>
+<td>
+<br/>
+<span class="io-table-header">Output</span>
+<br/>&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+<pre class="io-content">5
+4 2
+5 2
+6 2
+1000 1000
+1000 1
+
+</pre>
+</td>
+<td>
+<pre class="io-content">Case #1: 1 0
+Case #2: 1 0
+Case #3: 1 1
+Case #4: 0 0
+Case #5: 500 499
+
+</pre>
+</td></tr></table>
+</div>
+
+
+<p>
+  In Case #1, the first person occupies the leftmost of the middle two stalls,
+  leaving the following configuration (<code>O</code> stands for an occupied
+  stall and <code>.</code> for an empty one): <code>O.O..O</code>. Then, the
+  second and last person occupies the stall immediately to the right, leaving 1
+  empty stall on one side and none on the other.
+</p><p>
+  In Case #2, the first person occupies the middle stall, getting to
+  <code>O..O..O</code>. Then, the second and last person occupies the leftmost
+  stall.
+</p><p>
+  In Case #3, the first person occupies the leftmost of the two middle stalls,
+  leaving <code>O..O...O</code>. The second person then occupies the middle of
+  the three consecutive empty stalls.
+</p><p>
+  In Case #4, every stall is occupied at the end, no matter what the stall
+  choices are.
+</p><p>
+  In Case #5, the first and only person chooses the leftmost middle stall.
+</p>
